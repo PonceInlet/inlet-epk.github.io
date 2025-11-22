@@ -1,231 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>INLET — Electronic Press Kit</title>
+  <meta name="description" content="INLET — Indie Alt‑Rock / Surf band from Port Orange, FL. EPK with bio, music, gallery, gigs, and contact." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background: #f8f8f8;
-      color: #222;
-    }
-    header {
-      text-align: center;
-      padding: 40px 20px;
-      background: #ffffff;
-      border-bottom: 3px solid #e0e0e0;
-    }
-    header img {
-      max-width: 350px;
-      border-radius: 12px;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-      background: #fff;
-      margin-bottom: 25px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    h2 {
-      margin-top: 0;
-      color: #0d5c63;
-    }
-    .images-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .images-grid img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    }
+    :root{--bg:#f6f9fb;--card:#ffffff;--muted:#6b7280;--accent:#ff7a59;--accent2:#0ea5a4;--max:1100px}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:var(--bg);color:#0f172a}
+    a{color:var(--accent2);text-decoration:none}
+    .container{max-width:var(--max);margin:28px auto;padding:0 18px}
+
+    /* Hero */
+    header.hero{display:flex;gap:20px;align-items:center;padding:28px;background:linear-gradient(180deg,#fff 0%,rgba(14,165,164,0.02)100%);border-radius:12px}
+    .hero-art{width:170px;height:170px;object-fit:cover;border-radius:12px;flex:0 0 170px;box-shadow:0 12px 30px rgba(2,6,23,0.06)}
+    .hero-info h1{margin:0;font-size:40px;letter-spacing:1px}
+    .hero-info p{color:var(--muted);margin:8px 0 12px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#fff;font-weight:600;margin-right:8px}
+    .btn.ghost{background:transparent;border:1px solid rgba(15,23,42,0.06);color:var(--muted)}
+
+    /* Cards */
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.04);margin:18px 0;opacity:0;transform:translateY(10px);animation:fadeInUp .6s forwards}
+    @keyframes fadeInUp{to{opacity:1;transform:none}}
+
+    h2{margin:0 0 12px;color:#0d5c63}
+    .members li{margin-bottom:6px;color:var(--muted)}
+
+    /* Gallery */
+    .gallery-hero img{width:100%;height:auto;border-radius:12px;display:block}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .grid a img{width:100%;height:220px;object-fit:cover;border-radius:10px;transition:transform .28s ease,box-shadow .28s ease}
+    .grid a img:hover{transform:scale(1.03);box-shadow:0 18px 40px rgba(2,6,23,0.12)}
+
+    /* Carousel (simple scroll) */
+    .carousel{display:flex;gap:16px;overflow-x:auto;padding:8px 0;scroll-snap-type:x mandatory}
+    .carousel .slide{flex:0 0 80%;scroll-snap-align:center;border-radius:12px}
+    .carousel img{width:100%;height:360px;object-fit:cover;border-radius:12px}
+
+    /* Media & embeds */
+    .media-embeds iframe{width:100%;height:140px;border-radius:12px;border:0}
+    .two-col{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    @media (max-width:880px){.two-col{grid-template-columns:1fr}.hero-art{width:120px;height:120px}}
+
+    /* Hover highlight for list items */
+    .list-item{padding:10px;border-radius:8px;transition:background .18s ease}
+    .list-item:hover{background:linear-gradient(90deg,rgba(14,165,164,0.03),rgba(255,122,89,0.03))}
+
+    footer{text-align:center;padding:22px 0;color:var(--muted);font-size:13px}
+
   </style>
 </head>
 <body>
+  <div class="container">
 
-<header>
-  <h1>INLET — Electronic Press Kit</h1>
-  <img src="/mnt/data/Inlet Album Cover Palm Board.png" alt="Inlet Album Art" />
-</header>
+    <!-- HERO -->
+    <header class="hero" style="animation-delay:.05s">
+      <img class="hero-art" src="/mnt/data/Inlet Beach Air.png" alt="INLET band photo">
+      <div class="hero-info">
+        <h1>INLET</h1>
+        <p>Indie Alt‑Rock / Surf from Port Orange, FL — three reverb-soaked guitars, driving rhythm, singable melodies.</p>
+        <div>
+          <a class="btn" href="https://open.spotify.com/artist/17vaQuBeVZ0FozcBRqF9R3?si=7LcxjwdNR-Cpom4mPxUrCA" target="_blank">Listen on Spotify</a>
+          <a class="btn ghost" href="#contact">Booking</a>
+        </div>
+      </div>
+    </header>
 
-<section>
-  <h2>Band Bio</h2>
-  <p>Port Orange’s indie/surf outfit blending three chiming guitars, melodic bass, and energetic drums into a sunny, alt‑surf sound. Formed by five high‑school friends, Inlet writes hook‑driven songs inspired by surf, indie pop, and modern guitar bands.</p>
-</section>
+    <!-- ABOUT + MEMBERS + INFLUENCES -->
+    <section class="card" style="animation-delay:.15s">
+      <h2>Short Bio</h2>
+      <p>Inlet formed in Port Orange, Florida when five high‑school friends turned surf days and skate parks into a band. They write sun-soaked, hook-driven songs about good times, love, and life — blending shimmering reverb and chorus‑soaked guitars with tight rhythms and singable melodies. With an unmistakable three‑guitar attack, the quintet balances nostalgic surf warmth and contemporary indie edge.</p>
 
-<section>
-  <h2>Discography</h2>
-  <ul>
-    <li>Something's Going Down Tonight — 2023</li>
-    <li>You're My Girl — 2024</li>
-    <li>Give Me a Break — 2024</li>
-    <li>You Won't See Me — 2025</li>
-    <li>You're Not Owed That — Oct 2025</li>
-    <li>Fine — Oct 2025</li>
-  </ul>
-</section>
+      <h3 style="margin-top:14px">Band Members</h3>
+      <ul class="members">
+        <li><strong>Matthew Gray</strong> — Guitar / Vocals</li>
+        <li><strong>John Gray</strong> — Guitar / Vocals</li>
+        <li><strong>Jake Tweed</strong> — Guitar</li>
+        <li><strong>Luke Hampton</strong> — Bass</li>
+        <li><strong>Aaron McKeown</strong> — Drums</li>
+      </ul>
 
-<section>
-  <h2>Promo Images</h2>
-  <div class="images-grid">
-    <img src="/mnt/data/Inlet Album Cover Palm Board.png" alt="Promo Image 1" />
-    <img src="/mnt/data/Inlet Fine Cover.png" alt="Promo Image 2" />
-    <!-- Add more images here -->
+      <h3 style="margin-top:12px">Influences</h3>
+      <p class="list-item">The Strokes, Vampire Weekend, The Beatles, The Growlers, La Luz, The Smiths, Pixies, The Flaming Lips, Best Coast — plus jazz legends like Miles Davis & Coltrane and country greats like Hank Williams.</p>
+    </section>
+
+    <!-- MUSIC + EMBEDS + DISCOGRAPHY -->
+    <section class="card" style="animation-delay:.25s">
+      <div class="two-col">
+        <div>
+          <h2>Selected Singles & Discography</h2>
+          <ul>
+            <li class="list-item">Something's Going Down Tonight — 2023</li>
+            <li class="list-item">You're My Girl — 2024</li>
+            <li class="list-item">Give Me A Break — 2024</li>
+            <li class="list-item">You Won't See Me — 2025</li>
+            <li class="list-item">You're Not Owed That — Oct 2025</li>
+            <li class="list-item"><strong>Fine</strong> — Oct 2025 (underground hit)</li>
+          </ul>
+
+          <h3 style="margin-top:10px">Listen</h3>
+          <div class="media-embeds">
+            <!-- Spotify embed (artist) -->
+            <iframe src="https://open.spotify.com/embed/artist/17vaQuBeVZ0FozcBRqF9R3" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+            <p style="margin-top:8px">Apple Music / Deezer / YouTube links included in footer.</p>
+          </div>
+        </div>
+
+        <aside>
+          <h3>Quick Links</h3>
+          <ul style="padding-left:0;list-style:none">
+            <li class="list-item" style="margin-bottom:8px"><a href="https://open.spotify.com/artist/17vaQuBeVZ0FozcBRqF9R3?si=7LcxjwdNR-Cpom4mPxUrCA" target="_blank">Spotify Artist</a></li>
+            <li class="list-item" style="margin-bottom:8px"><a href="https://www.instagram.com/inlettheband?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a></li>
+            <li class="list-item" style="margin-bottom:8px"><a href="https://music.apple.com/us/album/youre-not-owed-that-fine-single/1842620752" target="_blank">Apple Music</a></li>
+            <li class="list-item" style="margin-bottom:8px"><a href="https://link.deezer.com/s/31G2hk3n6Er7YtIWcPccj" target="_blank">Deezer</a></li>
+            <li class="list-item" style="margin-bottom:8px"><a href="https://www.youtube.com/channel/UCIq0cUss-PxETZh6uOgyZlQ" target="_blank">YouTube Channel</a></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- GALLERY HERO -->
+    <section class="card" style="animation-delay:.35s">
+      <h2>Gallery</h2>
+      <div class="gallery-hero">
+        <a href="/mnt/data/Inlet Beach Air.png" target="_blank"><img src="/mnt/data/Inlet Beach Air.png" alt="INLET beach photo"></a>
+      </div>
+
+      <div style="margin-top:14px" class="grid">
+        <!-- Provided images -->
+        <a href="/mnt/data/Inlet Fisheye.png" target="_blank"><img src="/mnt/data/Inlet Fisheye.png" alt="Live fisheye"></a>
+        <a href="/mnt/data/Inlet Couch.png" target="_blank"><img src="/mnt/data/Inlet Couch.png" alt="Band couch"></a>
+
+        <!-- Placeholders for additional assets -->
+        <a href="images/logo-placeholder.png" target="_blank"><img src="images/logo-placeholder-thumb.png" alt="Logo placeholder"></a>
+        <a href="images/album-cover-placeholder.png" target="_blank"><img src="images/album-cover-placeholder-thumb.png" alt="Album cover placeholder"></a>
+        <a href="images/live-photo-placeholder1.png" target="_blank"><img src="images/live-photo-placeholder1-thumb.png" alt="Live photo placeholder 1"></a>
+        <a href="images/live-photo-placeholder2.png" target="_blank"><img src="images/live-photo-placeholder2-thumb.png" alt="Live photo placeholder 2"></a>
+      </div>
+
+      <!-- Simple horizontal carousel -->
+      <div style="margin-top:18px">
+        <h3>Carousel</h3>
+        <div class="carousel">
+          <div class="slide"><a href="/mnt/data/Inlet Beach Air.png" target="_blank"><img src="/mnt/data/Inlet Beach Air.png" alt="Slide 1"></a></div>
+          <div class="slide"><a href="/mnt/data/Inlet Fisheye.png" target="_blank"><img src="/mnt/data/Inlet Fisheye.png" alt="Slide 2"></a></div>
+          <div class="slide"><a href="/mnt/data/Inlet Couch.png" target="_blank"><img src="/mnt/data/Inlet Couch.png" alt="Slide 3"></a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESS & ACHIEVEMENTS -->
+    <section class="card" style="animation-delay:.45s">
+      <h2>Press & Achievements</h2>
+      <ul style="list-style:none;padding-left:0">
+        <li class="list-item">Underground hit: <em>Fine</em> — Oct 2025</li>
+        <li class="list-item">Consistent single releases (2023–2025) with growing streaming presence</li>
+        <li class="list-item">Performed at Punk Rock Pizza (Daytona Beach, FL) — March 2, 2025</li>
+        <li class="list-item">Sold-out show at Cinematique Theater (Downtown Daytona Beach, FL) — March 8, 2025</li>
+        <li class="list-item">Performed at Uncle Lou's (Orlando, FL) — April 6, 2025</li>
+        <li class="list-item">Performed at Delandapalooza Music Festival — April 12, 2025</li>
+        <li class="list-item">Performed at Will's Pub (Mills 50 District, Orlando, FL) — May 9, 2025</li>
+      </ul>
+    </section>
+
+    <!-- TECH RIDER -->
+    <section class="card" style="animation-delay:.55s">
+      <h2>Live / Tech Rider (Basic)</h2>
+      <p class="list-item"><strong>Typical set:</strong> 30–75 minutes. Lineup: 5 members — 3 electric guitars, bass, drums.</p>
+      <p class="list-item"><strong>Backline:</strong> 4-piece drum kit, 3 guitar amps (30–100W), bass amp 250W+ (or DI).</p>
+      <p class="list-item"><strong>Input list (suggested):</strong> Kick, Snare, Hi‑Hat, OH L, OH R, Bass DI, Guitar1 (Vox) L, Guitar2 (Vox) R, Guitar3, Backing Vox1, Backing Vox2, FX/Spare.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="card" style="animation-delay:.65s">
+      <h2>Contact & Booking</h2>
+      <p class="list-item"><strong>Booking / Press:</strong> booking@inletband.example (replace with actual)</p>
+      <p class="list-item"><strong>Management:</strong> info@inletband.example</p>
+      <p class="list-item"><strong>Location:</strong> Port Orange / Daytona Beach, FL</p>
+
+      <h3 style="margin-top:12px">Social & Streaming</h3>
+      <p style="margin:6px 0"><a href="https://open.spotify.com/artist/17vaQuBeVZ0FozcBRqF9R3?si=7LcxjwdNR-Cpom4mPxUrCA" target="_blank">Spotify</a> • <a href="https://www.instagram.com/inlettheband?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a> • <a href="https://music.apple.com/us/album/youre-not-owed-that-fine-single/1842620752" target="_blank">Apple Music</a> • <a href="https://link.deezer.com/s/31G2hk3n6Er7YtIWcPccj" target="_blank">Deezer</a> • <a href="https://www.youtube.com/channel/UCIq0cUss-PxETZh6uOgyZlQ" target="_blank">YouTube</a></p>
+    </section>
+
+    <footer style="margin-top:18px">© INLET — All rights reserved. EPK generated 2025.</footer>
+
   </div>
-</section>
-
-<section>
-  <h2>Achievements</h2>
-  <ul>
-    <li>Sold‑out show at Cinematique Theater — March 8, 2025</li>
-    <li>Performed at Punk Rock Pizza — March 2, 2025</li>
-    <li>Performed at Uncle Lou's — April 6, 2025</li>
-    <li>Performed at Delandapalooza Music Festival — April 12, 2025</li>
-    <li>Performed at Will's Pub — May 9, 2025</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Contact</h2>
-  <p>Email: booking@inletband.example</p>
-  <p>Location: Port Orange / Daytona Beach, FL</p>
-</section>
-
-  
-  <!-- === GALLERY: FULL-WIDTH HERO IMAGE === -->
-  <section class="gallery-hero">
-    <a href="/mnt/data/Inlet Album Cover Palm Board.png" target="_blank"><img src="/mnt/data/Inlet Album Cover Palm Board.png" alt="Hero Gallery Image" /></a>
-  </section>
-
-  <!-- === GALLERY: GRID === -->
-  <section class="gallery-grid">
-    <h2>Photo Gallery</h2>
-    <div class="grid">
-      <a href="/mnt/data/Inlet Album Cover Palm Board.png" target="_blank"><img src="/mnt/data/Inlet Album Cover Palm Board.png" alt="Gallery Image 1" /></a>
-      <a href="/mnt/data/Inlet Fine Cover.png" target="_blank"><img src="/mnt/data/Inlet Fine Cover.png" alt="Gallery Image 2" /></a>
-      <a href="/mnt/data/Inlet Album Cover Palm Board.png" target="_blank"><img src="/mnt/data/Inlet Album Cover Palm Board.png" alt="Gallery Image 3" /></a>
-      <a href="/mnt/data/Inlet Fine Cover.png" target="_blank"><img src="/mnt/data/Inlet Fine Cover.png" alt="Gallery Image 4" /></a>
-    </div>
-  </section>
-
-  <!-- === GALLERY: CAROUSEL === -->
-  <section class="carousel-section">
-    <h2>Image Carousel</h2>
-    <div class="carousel">
-      <div class="slide"><a href="/mnt/data/Inlet Album Cover Palm Board.png" target="_blank"><img src="/mnt/data/Inlet Album Cover Palm Board.png" alt="Slide 1"></a></div>
-      <div class="slide"><a href="/mnt/data/Inlet Fine Cover.png" target="_blank"><img src="/mnt/data/Inlet Fine Cover.png" alt="Slide 2"></a></div>
-      <div class="slide"><a href="/mnt/data/Inlet Album Cover Palm Board.png" target="_blank"><img src="/mnt/data/Inlet Album Cover Palm Board.png" alt="Slide 3"></a></div>
-    </div>
-  </section>
-
-  <!-- CAROUSEL CSS -->
-  <style>
-    .gallery-hero img {
-      width: 100%;
-      height: auto;
-      margin: 20px 0;
-      border-radius: 12px;
-    }
-
-    .gallery-grid .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 10px;
-    }
-    .gallery-grid img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .carousel {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 20px;
-      padding: 10px;
-    }
-    .carousel .slide {
-      flex: 0 0 80%;
-      scroll-snap-align: center;
-    }
-    .carousel img {
-      width: 100%;
-      border-radius: 12px;
-    }
-  </style>
-
-  
-  <!-- === GALLERY: FULL-WIDTH HERO IMAGE === -->
-  <section class="gallery-hero">
-    <img src="/mnt/data/Inlet Album Cover Palm Board.png" alt="Hero Gallery Image" />
-  </section>
-
-  <!-- === GALLERY: GRID === -->
-  <section class="gallery-grid">
-    <h2>Photo Gallery</h2>
-    <div class="grid">
-      <img src="/mnt/data/Inlet Album Cover Palm Board.png" alt="Gallery Image 1" />
-      <img src="/mnt/data/Inlet Fine Cover.png" alt="Gallery Image 2" />
-      <img src="/mnt/data/Inlet Album Cover Palm Board.png" alt="Gallery Image 3" />
-      <img src="/mnt/data/Inlet Fine Cover.png" alt="Gallery Image 4" />
-    </div>
-  </section>
-
-  <!-- === GALLERY: CAROUSEL === -->
-  <section class="carousel-section">
-    <h2>Image Carousel</h2>
-    <div class="carousel">
-      <div class="slide"><img src="/mnt/data/Inlet Album Cover Palm Board.png" alt="Slide 1"></div>
-      <div class="slide"><img src="/mnt/data/Inlet Fine Cover.png" alt="Slide 2"></div>
-      <div class="slide"><img src="/mnt/data/Inlet Album Cover Palm Board.png" alt="Slide 3"></div>
-    </div>
-  </section>
-
-  <!-- CAROUSEL & GALLERY CSS -->
-  <style>
-    .gallery-hero img {
-      width: 100%;
-      height: auto;
-      margin: 20px 0;
-      border-radius: 12px;
-    }
-
-    .gallery-grid .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 10px;
-    }
-    .gallery-grid img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .carousel {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 20px;
-      padding: 10px;
-    }
-    .carousel .slide {
-      flex: 0 0 80%;
-      scroll-snap-align: center;
-    }
-    .carousel img {
-      width: 100%;
-      border-radius: 12px;
-    }
-  </style>
-
 </body>
 </html>
