@@ -7,49 +7,176 @@
   <meta name="description" content="INLET — Indie Alt-Rock / Surf band from Port Orange, FL. EPK with bio, music, gallery, gigs, and contact." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#f6f9fb;--card:#ffffff;--muted:#6b7280;--accent:#ff7a59;--accent2:#0ea5a4;--max:1100px}
+    :root{
+      --bg:#f6f9fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#ff7a59;
+      --accent2:#0ea5a4;
+      --max:1100px;
+    }
     *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:var(--bg);color:#0f172a}
+    body{
+      font-family:Inter,system-ui,Arial,sans-serif;
+      margin:0;
+      background:var(--bg);
+      color:#0f172a;
+    }
     a{color:var(--accent2);text-decoration:none}
     .container{max-width:var(--max);margin:28px auto;padding:0 18px}
 
     /* Hero */
-    header.hero{display:flex;gap:20px;align-items:center;padding:28px;background:linear-gradient(180deg,#fff 0%,rgba(14,165,164,0.02)100%);border-radius:12px}
-    .hero-art{width:170px;height:170px;object-fit:cover;border-radius:12px;flex:0 0 170px;box-shadow:0 12px 30px rgba(2,6,23,0.06)}
-    .hero-info h1{margin:0;font-size:40px;letter-spacing:1px}
-    .hero-info p{color:var(--muted);margin:8px 0 12px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#fff;font-weight:600;margin-right:8px}
-    .btn.ghost{background:transparent;border:1px solid rgba(15,23,42,0.06);color:var(--muted)}
+    header.hero{
+      display:flex;
+      gap:20px;
+      align-items:center;
+      padding:28px;
+      background:linear-gradient(180deg,#fff 0%,rgba(14,165,164,0.02)100%);
+      border-radius:12px;
+    }
+    .hero-art{
+      width:170px;
+      height:170px;
+      object-fit:cover;
+      border-radius:12px;
+      flex:0 0 170px;
+      box-shadow:0 12px 30px rgba(2,6,23,0.06);
+    }
+    .hero-info h1{
+      margin:0;
+      font-size:40px;
+      letter-spacing:1px;
+    }
+    .hero-info p{
+      color:var(--muted);
+      margin:8px 0 12px;
+    }
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:10px;
+      background:var(--accent);
+      color:#fff;
+      font-weight:600;
+      margin-right:8px;
+    }
+    .btn.ghost{
+      background:transparent;
+      border:1px solid rgba(15,23,42,0.06);
+      color:var(--muted);
+    }
 
     /* Cards */
-    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.04);margin:18px 0;opacity:0;transform:translateY(10px);animation:fadeInUp .6s forwards}
-    @keyframes fadeInUp{to{opacity:1;transform:none}}
-    .card { will-change: opacity, transform; }
+    .card{
+      background:var(--card);
+      padding:18px;
+      border-radius:12px;
+      box-shadow:0 8px 24px rgba(2,6,23,0.04);
+      margin:18px 0;
+      opacity:0;
+      transform:translateY(10px);
+      animation:fadeInUp .6s forwards;
+    }
+    @keyframes fadeInUp{
+      to{opacity:1;transform:none}
+    }
+    .card{will-change:opacity,transform;}
 
     h2{margin:0 0 12px;color:#0d5c63}
     .members li{margin-bottom:6px;color:var(--muted)}
 
     /* Gallery */
-    .gallery-hero img{width:100%;height:auto;border-radius:12px;display:block}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
-    .grid a img{width:100%;height:220px;object-fit:cover;border-radius:10px;transition:transform .28s ease,box-shadow .28s ease}
-    .grid a img:hover{transform:scale(1.03);box-shadow:0 18px 40px rgba(2,6,23,0.12)}
+    .gallery-hero img{
+      width:100%;
+      height:auto;
+      border-radius:12px;
+      display:block;
+    }
+
+    /* uniform grid thumbnails */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+      margin-top:14px;
+    }
+    .grid a{
+      display:block;
+      position:relative;
+      overflow:hidden;
+      border-radius:10px;
+    }
+    .grid a img{
+      width:100%;
+      aspect-ratio:4 / 3;   /* all tiles same shape */
+      object-fit:cover;     /* crop nicely */
+      display:block;
+      transition:transform .28s ease,box-shadow .28s ease;
+    }
+    .grid a img:hover{
+      transform:scale(1.03);
+      box-shadow:0 18px 40px rgba(2,6,23,0.12);
+    }
 
     /* Carousel (simple scroll) */
-    .carousel{display:flex;gap:16px;overflow-x:auto;padding:8px 0;scroll-snap-type:x mandatory}
-    .carousel .slide{flex:0 0 80%;scroll-snap-align:center;border-radius:12px}
-    .carousel img{width:100%;height:360px;object-fit:cover;border-radius:12px}
+    .carousel{
+      display:flex;
+      gap:16px;
+      overflow-x:auto;
+      padding:8px 0;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+    }
+    .carousel::-webkit-scrollbar{
+      display:none;
+    }
+    .carousel .slide{
+      flex:0 0 80%;
+      scroll-snap-align:center;
+      border-radius:12px;
+      overflow:hidden;
+    }
+    .carousel img{
+      width:100%;
+      height:360px;
+      object-fit:cover;
+      border-radius:12px;
+      display:block;
+    }
 
     /* Media & embeds */
-    .media-embeds iframe{width:100%;height:140px;border-radius:12px;border:0}
-    .two-col{display:grid;grid-template-columns:1fr 320px;gap:18px}
-    @media (max-width:880px){.two-col{grid-template-columns:1fr}.hero-art{width:120px;height:120px}}
+    .media-embeds iframe{
+      width:100%;
+      height:140px;
+      border-radius:12px;
+      border:0;
+    }
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 320px;
+      gap:18px;
+    }
+    @media (max-width:880px){
+      .two-col{grid-template-columns:1fr}
+      .hero-art{width:120px;height:120px}
+    }
 
     /* Hover highlight for list items */
-    .list-item{padding:10px;border-radius:8px;transition:background .18s ease}
-    .list-item:hover{background:linear-gradient(90deg,rgba(14,165,164,0.03),rgba(255,122,89,0.03))}
+    .list-item{
+      padding:10px;
+      border-radius:8px;
+      transition:background .18s ease;
+    }
+    .list-item:hover{
+      background:linear-gradient(90deg,rgba(14,165,164,0.03),rgba(255,122,89,0.03));
+    }
 
-    footer{text-align:center;padding:22px 0;color:var(--muted);font-size:13px}
+    footer{
+      text-align:center;
+      padding:22px 0;
+      color:var(--muted);
+      font-size:13px;
+    }
 
   </style>
 </head>
@@ -123,36 +250,43 @@
       </div>
     </section>
 
-    <!-- GALLERY HERO -->
+    <!-- GALLERY -->
     <section class="card" style="animation-delay:.35s">
       <h2>Gallery</h2>
 
       <!-- hero image -->
       <div class="gallery-hero">
-        <a href="assets/inlet-beach-air.png" target="_blank"><img src="assets/inlet-beach-air.png" alt="INLET beach photo"></a>
+        <a href="assets/inlet-bw-home.png" target="_blank">
+          <img src="assets/inlet-bw-home.png" alt="INLET home black and white">
+        </a>
       </div>
 
-      <!-- grid -->
+      <!-- uniform grid -->
       <div class="grid">
-        <a href="assets/inlet-fisheye.png" target="_blank"><img src="assets/inlet-fisheye.png" alt="Live fisheye"></a>
-        <a href="assets/inlet-couch.png" target="_blank"><img src="assets/inlet-couch.png" alt="Band couch"></a>
-        <a href="assets/inlet-logo.jpg" target="_blank"><img src="assets/inlet-logo.jpg" alt="Logo placeholder"></a>
-        <a href="assets/inlet-album-cover-palm-board.png" target="_blank"><img src="assets/inlet-album-cover-palm-board.png" alt="Album cover placeholder"></a>
-        <a href="assets/inlet-live-wills-color.png" target="_blank"><img src="assets/inlet-live-wills-color.png" alt="Live photo placeholder 1"></a>
-        <a href="assets/inlet-luke-john-matt-deland.png" target="_blank"><img src="assets/inlet-luke-john-matt-deland.png" alt="Live photo placeholder 2"></a>
+        <a href="assets/inlet-beach.png" target="_blank"><img src="assets/inlet-beach.png" alt="Band on the beach"></a>
+        <a href="assets/inlet-beach-walking.png" target="_blank"><img src="assets/inlet-beach-walking.png" alt="Band walking on beach"></a>
+        <a href="assets/inlet-beach-football.png" target="_blank"><img src="assets/inlet-beach-football.png" alt="Beach football"></a>
+        <a href="assets/inlet-beach-diag-serious.png" target="_blank"><img src="assets/inlet-beach-diag-serious.png" alt="Diagonal serious pose"></a>
+        <a href="assets/inlet-fisheye.png" target="_blank"><img src="assets/inlet-fisheye.png" alt="Live fisheye shot"></a>
+        <a href="assets/inlet-couch.png" target="_blank"><img src="assets/inlet-couch.png" alt="Band on couch"></a>
+        <a href="assets/inlet-live-wills-color.png" target="_blank"><img src="assets/inlet-live-wills-color.png" alt="Live at Will's Pub"></a>
+        <a href="assets/inlet-luke-john-matt-deland.png" target="_blank"><img src="assets/inlet-luke-john-matt-deland.png" alt="Luke John Matt Deland"></a>
+        <a href="assets/inlet-album-cover-palm-board.png" target="_blank"><img src="assets/inlet-album-cover-palm-board.png" alt="Album cover palm board"></a>
+        <a href="assets/inlet-fine-cover.png" target="_blank"><img src="assets/inlet-fine-cover.png" alt="Fine single cover"></a>
+        <a href="assets/inlet-logo.jpg" target="_blank"><img src="assets/inlet-logo.jpg" alt="Inlet logo"></a>
+        <a href="assets/inlet-drums-blur.png" target="_blank"><img src="assets/inlet-drums-blur.png" alt="Drums blur"></a>
       </div>
 
       <!-- Simple horizontal carousel -->
       <div style="margin-top:18px">
         <h3>Carousel</h3>
         <div class="carousel">
-          <div class="slide"><a href="assets/inlet-beach-air.png" target="_blank"><img src="assets/inlet-beach-air.png" alt="Slide 1"></a></div>
-          <div class="slide"><a href="assets/inlet-fisheye.png" target="_blank"><img src="assets/inlet-fisheye.png" alt="Slide 2"></a></div>
-          <div class="slide"><a href="assets/inlet-couch.png" target="_blank"><img src="assets/inlet-couch.png" alt="Slide 3"></a></div>
-          <div class="slide"><a href="assets/inlet-logo.jpg" target="_blank"><img src="assets/inlet-logo.jpg" alt="Logo placeholder"></a></div>
-          <div class="slide"><a href="assets/inlet-album-cover-palm-board.png" target="_blank"><img src="assets/inlet-album-cover-palm-board.png" alt="Album cover placeholder"></a></div>
-          <div class="slide"><a href="assets/inlet-live-wills-color.png" target="_blank"><img src="assets/inlet-live-wills-color.png" alt="Live photo placeholder 1"></a></div>
-          <div class="slide"><a href="assets/inlet-luke-john-matt-deland.png" target="_blank"><img src="assets/inlet-luke-john-matt-deland.png" alt="Live photo placeholder 2"></a></div>
+          <div class="slide"><a href="assets/inlet-beach-air.png" target="_blank"><img src="assets/inlet-beach-air.png" alt="Beach air"></a></div>
+          <div class="slide"><a href="assets/inlet-live-wills-color.png" target="_blank"><img src="assets/inlet-live-wills-color.png" alt="Live at Will's Pub"></a></div>
+          <div class="slide"><a href="assets/inlet-couch.png" target="_blank"><img src="assets/inlet-couch.png" alt="Couch"></a></div>
+          <div class="slide"><a href="assets/inlet-jake-wills.png" target="_blank"><img src="assets/inlet-jake-wills.png" alt="Jake at Will's"></a></div>
+          <div class="slide"><a href="assets/inlet-john-matt-deland.png" target="_blank"><img src="assets/inlet-john-matt-deland.png" alt="John and Matt Deland"></a></div>
+          <div class="slide"><a href="assets/inlet-luke-wills.png" target="_blank"><img src="assets/inlet-luke-wills.png" alt="Luke at Will's"></a></div>
         </div>
       </div>
 
@@ -188,7 +322,13 @@
       <p class="list-item"><strong>Location:</strong> Port Orange / Daytona Beach, FL</p>
 
       <h3 style="margin-top:12px">Social & Streaming</h3>
-      <p style="margin:6px 0"><a href="https://open.spotify.com/artist/17vaQuBeVZ0FozcBRqF9R3?si=7LcxjwdNR-Cpom4mPxUrCA" target="_blank">Spotify</a> • <a href="https://www.instagram.com/inlettheband" target="_blank">Instagram</a> • <a href="https://music.apple.com/us/album/youre-not-owed-that-fine-single/1842620752" target="_blank">Apple Music</a> • <a href="https://link.deezer.com/s/31G2hk3n6Er7YtIWcPccj" target="_blank">Deezer</a> • <a href="https://www.youtube.com/channel/UCIq0cUss-PxETZh6uOgyZlQ" target="_blank">YouTube</a></p>
+      <p style="margin:6px 0">
+        <a href="https://open.spotify.com/artist/17vaQuBeVZ0FozcBRqF9R3?si=7LcxjwdNR-Cpom4mPxUrCA" target="_blank">Spotify</a> •
+        <a href="https://www.instagram.com/inlettheband" target="_blank">Instagram</a> •
+        <a href="https://music.apple.com/us/album/youre-not-owed-that-fine-single/1842620752" target="_blank">Apple Music</a> •
+        <a href="https://link.deezer.com/s/31G2hk3n6Er7YtIWcPccj" target="_blank">Deezer</a> •
+        <a href="https://www.youtube.com/channel/UCIq0cUss-PxETZh6uOgyZlQ" target="_blank">YouTube</a>
+      </p>
     </section>
 
     <footer style="margin-top:18px">© INLET — All rights reserved. EPK generated 2025.</footer>
@@ -196,4 +336,5 @@
   </div>
 </body>
 </html>
+
 
