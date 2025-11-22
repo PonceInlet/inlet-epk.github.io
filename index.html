@@ -1,10 +1,10 @@
-s<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>INLET — Electronic Press Kit</title>
-  <meta name="description" content="INLET — Indie Alt‑Rock / Surf band from Port Orange, FL. EPK with bio, music, gallery, gigs, and contact." />
+  <meta name="description" content="INLET — Indie Alt-Rock / Surf band from Port Orange, FL. EPK with bio, music, gallery, gigs, and contact." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{--bg:#f6f9fb;--card:#ffffff;--muted:#6b7280;--accent:#ff7a59;--accent2:#0ea5a4;--max:1100px}
@@ -24,13 +24,14 @@ s<!doctype html>
     /* Cards */
     .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.04);margin:18px 0;opacity:0;transform:translateY(10px);animation:fadeInUp .6s forwards}
     @keyframes fadeInUp{to{opacity:1;transform:none}}
+    .card { will-change: opacity, transform; }
 
     h2{margin:0 0 12px;color:#0d5c63}
     .members li{margin-bottom:6px;color:var(--muted)}
 
     /* Gallery */
     .gallery-hero img{width:100%;height:auto;border-radius:12px;display:block}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
     .grid a img{width:100%;height:220px;object-fit:cover;border-radius:10px;transition:transform .28s ease,box-shadow .28s ease}
     .grid a img:hover{transform:scale(1.03);box-shadow:0 18px 40px rgba(2,6,23,0.12)}
 
@@ -57,10 +58,10 @@ s<!doctype html>
 
     <!-- HERO -->
     <header class="hero" style="animation-delay:.05s">
-      <img class="hero-art" src="assets/Inlet Beach Air.png" alt="INLET band photo">
+      <img class="hero-art" src="assets/inlet-beach-air.png" alt="INLET band photo">
       <div class="hero-info">
         <h1>INLET</h1>
-        <p>Indie Alt‑Rock / Surf from Port Orange, FL — three reverb-soaked guitars, driving rhythm, singable melodies.</p>
+        <p>Indie Alt-Rock / Surf from Port Orange, FL — three reverb-soaked guitars, driving rhythm, singable melodies.</p>
         <div>
           <a class="btn" href="https://open.spotify.com/artist/17vaQuBeVZ0FozcBRqF9R3?si=7LcxjwdNR-Cpom4mPxUrCA" target="_blank">Listen on Spotify</a>
           <a class="btn ghost" href="#contact">Booking</a>
@@ -71,7 +72,7 @@ s<!doctype html>
     <!-- ABOUT + MEMBERS + INFLUENCES -->
     <section class="card" style="animation-delay:.15s">
       <h2>Short Bio</h2>
-      <p>Inlet formed in Port Orange, Florida when five high‑school friends turned surf days and skate parks into a band. They write sun-soaked, hook-driven songs about good times, love, and life — blending shimmering reverb and chorus‑soaked guitars with tight rhythms and singable melodies. With an unmistakable three‑guitar attack, the quintet balances nostalgic surf warmth and contemporary indie edge.</p>
+      <p>Inlet formed in Port Orange, Florida when five high-school friends turned surf days and skate parks into a band. They write sun-soaked, hook-driven songs about good times, love, and life — blending shimmering reverb and chorus-soaked guitars with tight rhythms and singable melodies. With an unmistakable three-guitar attack, the quintet balances nostalgic surf warmth and contemporary indie edge.</p>
 
       <h3 style="margin-top:14px">Band Members</h3>
       <ul class="members">
@@ -113,7 +114,7 @@ s<!doctype html>
           <h3>Quick Links</h3>
           <ul style="padding-left:0;list-style:none">
             <li class="list-item" style="margin-bottom:8px"><a href="https://open.spotify.com/artist/17vaQuBeVZ0FozcBRqF9R3?si=7LcxjwdNR-Cpom4mPxUrCA" target="_blank">Spotify Artist</a></li>
-            <li class="list-item" style="margin-bottom:8px"><a href="https://www.instagram.com/inlettheband?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a></li>
+            <li class="list-item" style="margin-bottom:8px"><a href="https://www.instagram.com/inlettheband" target="_blank">Instagram</a></li>
             <li class="list-item" style="margin-bottom:8px"><a href="https://music.apple.com/us/album/youre-not-owed-that-fine-single/1842620752" target="_blank">Apple Music</a></li>
             <li class="list-item" style="margin-bottom:8px"><a href="https://link.deezer.com/s/31G2hk3n6Er7YtIWcPccj" target="_blank">Deezer</a></li>
             <li class="list-item" style="margin-bottom:8px"><a href="https://www.youtube.com/channel/UCIq0cUss-PxETZh6uOgyZlQ" target="_blank">YouTube Channel</a></li>
@@ -125,45 +126,36 @@ s<!doctype html>
     <!-- GALLERY HERO -->
     <section class="card" style="animation-delay:.35s">
       <h2>Gallery</h2>
+
+      <!-- hero image -->
       <div class="gallery-hero">
-        <a href="assets/Inlet Beach Air.png" target="_blank"><img src="assets/Inlet Beach Air.png" alt="INLET beach photo"></a>
-        <a href="assets/Inlet Fisheye.png" target="_blank"><img src="assets/Inlet Fisheye.png" alt="Live fisheye"></a>
-        <a href="assets/Inlet Couch.png" target="_blank"><img src="assets/Inlet Couch.png" alt="Band couch"></a> 
-        <a href="assets/Inlet logo.jpg" target="_blank"><img src="assets/Inlet logo.jpg" alt="Logo placeholder"></a>
-        <a href="assets/Inlet album cover palm board.png" target="_blank"><img src="assets/Inlet album cover palm board.png" alt="Album cover placeholder"></a>
-        <a href="assets/Inlet live wills color.png" target="_blank"><img src="assets/Inlet live wills color.png" alt="Live photo placeholder 1"></a>
-        <a href="assets/Inlet luke john matt deland.png" target="_blank"><img src="assets/Inlet luke john matt deland.png" alt="Live photo placeholder 2"></a>
+        <a href="assets/inlet-beach-air.png" target="_blank"><img src="assets/inlet-beach-air.png" alt="INLET beach photo"></a>
       </div>
 
-
-
-
-        
-      </div>
-
-      <div style="margin-top:14px" class="grid">
-        <!-- Provided images -->
-        <a href="assets/Inlet Fisheye.png" target="_blank"><img src="assets/Inlet Fisheye.png" alt="Live fisheye"></a>
-        <a href="assets/Inlet Couch.png" target="_blank"><img src="assets/Inlet Couch.png" alt="Band couch"></a> 
-        <a href="assets/Inlet logo.jpg" target="_blank"><img src="assets/Inlet logo.jpg" alt="Logo placeholder"></a>
-        <a href="assets/Inlet album cover palm board.png" target="_blank"><img src="assets/Inlet album cover palm board.png" alt="Album cover placeholder"></a>
-        <a href="assets/Inlet live wills color.png" target="_blank"><img src="assets/Inlet live wills color.png" alt="Live photo placeholder 1"></a>
-        <a href="assets/Inlet luke john matt deland.png" target="_blank"><img src="assets/Inlet luke john matt deland.png" alt="Live photo placeholder 2"></a>
+      <!-- grid -->
+      <div class="grid">
+        <a href="assets/inlet-fisheye.png" target="_blank"><img src="assets/inlet-fisheye.png" alt="Live fisheye"></a>
+        <a href="assets/inlet-couch.png" target="_blank"><img src="assets/inlet-couch.png" alt="Band couch"></a>
+        <a href="assets/inlet-logo.jpg" target="_blank"><img src="assets/inlet-logo.jpg" alt="Logo placeholder"></a>
+        <a href="assets/inlet-album-cover-palm-board.png" target="_blank"><img src="assets/inlet-album-cover-palm-board.png" alt="Album cover placeholder"></a>
+        <a href="assets/inlet-live-wills-color.png" target="_blank"><img src="assets/inlet-live-wills-color.png" alt="Live photo placeholder 1"></a>
+        <a href="assets/inlet-luke-john-matt-deland.png" target="_blank"><img src="assets/inlet-luke-john-matt-deland.png" alt="Live photo placeholder 2"></a>
       </div>
 
       <!-- Simple horizontal carousel -->
       <div style="margin-top:18px">
         <h3>Carousel</h3>
         <div class="carousel">
-          <div class="slide"><a href="assets/Inlet Beach Air.png" target="_blank"><img src="assets/Inlet Beach Air.png" alt="Slide 1"></a></div>
-          <div class="slide"><a href="assets/Inlet Fisheye.png" target="_blank"><img src="assets/Inlet Fisheye.png" alt="Slide 2"></a></div>
-          <div class="slide"><a href="assets/Inlet Couch.png" target="_blank"><img src="assets/Inlet Couch.png" alt="Slide 3"></a></div>
-          <div class="slide"><a href="assets/Inlet logo.jpg" target="_blank"><img src="assets/Inlet logo.jpg" alt="Logo placeholder"></a></div>
-          <div class="slide"><a href="assets/Inlet album cover palm board.png" target="_blank"><img src="assets/Inlet album cover palm board.png" alt="Album cover placeholder"></a></div>
-          <div class="slide"><a href="assets/Inlet live wills color.png" target="_blank"><img src="assets/Inlet live wills color.png" alt="Live photo placeholder 1"></a></div>
-          <div class="slide"><a href="assets/Inlet luke john matt deland.png" target="_blank"><img src="assets/Inlet luke john matt deland.png" alt="Live photo placeholder 2"></a></div>
+          <div class="slide"><a href="assets/inlet-beach-air.png" target="_blank"><img src="assets/inlet-beach-air.png" alt="Slide 1"></a></div>
+          <div class="slide"><a href="assets/inlet-fisheye.png" target="_blank"><img src="assets/inlet-fisheye.png" alt="Slide 2"></a></div>
+          <div class="slide"><a href="assets/inlet-couch.png" target="_blank"><img src="assets/inlet-couch.png" alt="Slide 3"></a></div>
+          <div class="slide"><a href="assets/inlet-logo.jpg" target="_blank"><img src="assets/inlet-logo.jpg" alt="Logo placeholder"></a></div>
+          <div class="slide"><a href="assets/inlet-album-cover-palm-board.png" target="_blank"><img src="assets/inlet-album-cover-palm-board.png" alt="Album cover placeholder"></a></div>
+          <div class="slide"><a href="assets/inlet-live-wills-color.png" target="_blank"><img src="assets/inlet-live-wills-color.png" alt="Live photo placeholder 1"></a></div>
+          <div class="slide"><a href="assets/inlet-luke-john-matt-deland.png" target="_blank"><img src="assets/inlet-luke-john-matt-deland.png" alt="Live photo placeholder 2"></a></div>
         </div>
       </div>
+
     </section>
 
     <!-- PRESS & ACHIEVEMENTS -->
@@ -185,7 +177,7 @@ s<!doctype html>
       <h2>Live / Tech Rider (Basic)</h2>
       <p class="list-item"><strong>Typical set:</strong> 30–75 minutes. Lineup: 5 members — 3 electric guitars, bass, drums.</p>
       <p class="list-item"><strong>Backline:</strong> 4-piece drum kit, 3 guitar amps (30–100W), bass amp 250W+ (or DI).</p>
-      <p class="list-item"><strong>Input list (suggested):</strong> Kick, Snare, Hi‑Hat, OH L, OH R, Bass DI, Guitar1 (Vox) L, Guitar2 (Vox) R, Guitar3, Backing Vox1, Backing Vox2, FX/Spare.</p>
+      <p class="list-item"><strong>Input list (suggested):</strong> Kick, Snare, Hi-Hat, OH L, OH R, Bass DI, Guitar1 (Vox) L, Guitar2 (Vox) R, Guitar3, Backing Vox1, Backing Vox2, FX/Spare.</p>
     </section>
 
     <!-- CONTACT -->
@@ -196,7 +188,7 @@ s<!doctype html>
       <p class="list-item"><strong>Location:</strong> Port Orange / Daytona Beach, FL</p>
 
       <h3 style="margin-top:12px">Social & Streaming</h3>
-      <p style="margin:6px 0"><a href="https://open.spotify.com/artist/17vaQuBeVZ0FozcBRqF9R3?si=7LcxjwdNR-Cpom4mPxUrCA" target="_blank">Spotify</a> • <a href="https://www.instagram.com/inlettheband?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a> • <a href="https://music.apple.com/us/album/youre-not-owed-that-fine-single/1842620752" target="_blank">Apple Music</a> • <a href="https://link.deezer.com/s/31G2hk3n6Er7YtIWcPccj" target="_blank">Deezer</a> • <a href="https://www.youtube.com/channel/UCIq0cUss-PxETZh6uOgyZlQ" target="_blank">YouTube</a></p>
+      <p style="margin:6px 0"><a href="https://open.spotify.com/artist/17vaQuBeVZ0FozcBRqF9R3?si=7LcxjwdNR-Cpom4mPxUrCA" target="_blank">Spotify</a> • <a href="https://www.instagram.com/inlettheband" target="_blank">Instagram</a> • <a href="https://music.apple.com/us/album/youre-not-owed-that-fine-single/1842620752" target="_blank">Apple Music</a> • <a href="https://link.deezer.com/s/31G2hk3n6Er7YtIWcPccj" target="_blank">Deezer</a> • <a href="https://www.youtube.com/channel/UCIq0cUss-PxETZh6uOgyZlQ" target="_blank">YouTube</a></p>
     </section>
 
     <footer style="margin-top:18px">© INLET — All rights reserved. EPK generated 2025.</footer>
@@ -204,3 +196,4 @@ s<!doctype html>
   </div>
 </body>
 </html>
+
